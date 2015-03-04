@@ -4,15 +4,16 @@
    * Instantiate variables.
    */
 
-   var packages = [];
-   var username = '';
+  var packages = [];
+  var username = '';
 
   /**
    * Get user.
    */
 
   function getUser() {
-    // grab from URL or better to get it from server?
+    username = window.location.pathname.substr(1);
+    getPackages(username);
   }
 
   /**

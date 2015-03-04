@@ -16,18 +16,20 @@ var koa = require('koa');
 exports = app = koa();
 
 /**
- * Configure routes.
- */
-
-var routes = require('../server/routes.js');
-app.use(route.get('/:username', routes.index));
-app.use(route.get('/', routes.index));
-
-/**
  * Setup static directory.
  */
 
 app.use(serve('public'));
+
+/**
+ * Configure routes.
+ */
+
+var routes = require('../server/routes.js');
+app.use(route.get('/:username/:from/:to', routes.index));
+app.use(route.get('/:username/:from/', routes.index));
+app.use(route.get('/:username/', routes.index));
+app.use(route.get('/', routes.index));
 
 /**
  * Listen on PORT.
