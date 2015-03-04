@@ -2,7 +2,11 @@
 
 > Analytics for your npm packages.
 
+## How to use
+
 TODO
+
+
 
 ## License (MIT)
 

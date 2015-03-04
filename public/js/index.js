@@ -1,52 +1,27 @@
 (function() {
 
   /**
-   * Instantiate variables.
+   * Form submit to redirect user.
    */
 
-  var packages = [];
-  var username = '';
+  $('form').submit(function(e) {
+    e.preventDefault();
+    redirect();
+  });
 
   /**
-   * Get user.
+   * Text blur to redirect user.
    */
 
-  function getUser() {
-    username = window.location.pathname.substr(1);
-    getPackages(username);
-  }
+  $('').blur(redirect);
 
   /**
-   * Get user's packages.
-   *
-   * @param {string} username
+   * Redirect user.
    */
 
-  function getPackages(username) {
-    if (username.length === 0) return;
-    var domain = 'https://www.npmjs.com/~' + username;
-    $.get(domain, function(data) {
-      console.log(data);
-      // get package names from HTML.
-      // save them to object.
-    });
-  }
-
-  /**
-   * Get package download info.
-   *
-   * @param {string} pkg
-   * @param {string} from
-   * @param {string} to
-   */
-
-  function getStats(pkg, from, to) {
-    var domain = 'https://api.npmjs.org/downloads/range/';
-    domain += from + ':' + to + '/' + pkg;
-    $.get(domain, function(data) {
-      // data is JSON.
-      // feed this data into some D3 shiz.
-    });
+  function redirect() {
+    var username = $('input[name="username"]').val();
+    if (username) document.location.href = '/' + username;
   }
 
 })();

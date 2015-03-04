@@ -26,9 +26,9 @@ app.use(serve('public'));
  */
 
 var routes = require('../server/routes.js');
-app.use(route.get('/:username/:from/:to', routes.index));
-app.use(route.get('/:username/:from/', routes.index));
-app.use(route.get('/:username/', routes.index));
+app.use(route.get('/:username/:from/:to', routes.stats));
+app.use(route.get('/:username/:from/', routes.stats));
+app.use(route.get('/:username/', routes.stats));
 app.use(route.get('/', routes.index));
 
 /**
