@@ -20,6 +20,7 @@ exports = app = koa();
  */
 
 var routes = require('../server/routes.js');
+app.use(route.get('/:username', routes.index));
 app.use(route.get('/', routes.index));
 
 /**
