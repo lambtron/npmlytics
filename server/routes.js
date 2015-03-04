@@ -18,5 +18,6 @@ exports.index = function *(username, from, to) {
     var stats = yield npm.downloads(packages[i], from, to);
     data.push(stats);
   }
-  this.body = yield render('index', { data: data });
+  // this.body = yield render('index', { data: data });
+  this.body = data;
 };
