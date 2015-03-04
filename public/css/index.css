@@ -1,0 +1,16 @@
+
+#logo {
+  width: 380px;
+  margin: 100px 0px 70px 0px
+}
+
+input {
+  background-color: transparent;
+  border: 0px;
+  width: 100%;
+  padding-left: 64px;
+}
+
+textarea:focus, input:focus{
+  outline: 0;
+}
