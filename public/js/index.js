@@ -19,6 +19,12 @@
   });
 
   /**
+   * Focus to text box.
+   */
+
+  $('input[name="username"]').focus();
+
+  /**
    * Redirect user.
    */
 
