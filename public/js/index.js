@@ -13,7 +13,10 @@
    * Text blur to redirect user.
    */
 
-  $('').blur(redirect);
+  $('input[name="username"]').blur(function() {
+    if ($(this).val().length === 0) $(this).focus();
+    redirect();
+  });
 
   /**
    * Redirect user.
