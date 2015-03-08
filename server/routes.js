@@ -19,12 +19,13 @@ exports.index = function *() {
  */
 
 exports.stats = function *(username, from, to) {
-  var data = [];
+  if (!~this.request.url.indexOf('.json')) return this.body = yield render('chart');
   if (!username) return redirect('/');
-  packages = yield npm.packages(username);
+  var data = [];
+  var packages = yield npm.packages(username);
   for (var i = 0; i < packages.length; i++) {
     var stats = yield npm.downloads(packages[i], from, to);
     data.push(stats);
   }
-  this.body = data;
+  return this.body = data;
 };

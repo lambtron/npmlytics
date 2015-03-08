@@ -26,9 +26,12 @@ app.use(serve('public'));
  */
 
 var routes = require('../server/routes.js');
+app.use(route.get('/:username/:from/:to.json', routes.stats));
 app.use(route.get('/:username/:from/:to', routes.stats));
-app.use(route.get('/:username/:from/', routes.stats));
-app.use(route.get('/:username/', routes.stats));
+app.use(route.get('/:username/:from.json', routes.stats));
+app.use(route.get('/:username/:from', routes.stats));
+app.use(route.get('/:username.json', routes.stats));
+app.use(route.get('/:username', routes.stats));
 app.use(route.get('/', routes.index));
 
 /**
