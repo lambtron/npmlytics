@@ -23,6 +23,7 @@
     "koa-logger": "^1.2.2",
     "koa-route": "^2.2.0",
     "koa-static": "^1.4.9",
+    "lodash": "^3.5.0",
     "moment": "^2.9.0",
     "request": "^2.53.0",
     "swig": "^1.4.2",
